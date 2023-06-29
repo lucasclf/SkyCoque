@@ -8,6 +8,7 @@ public class ControlaJogador : MonoBehaviour
     private ControlaCena diretor;
     [SerializeField]
     private float forca = 5;
+    private bool deveImpulsionar = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -22,21 +23,26 @@ public class ControlaJogador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Impulsionar();
-        
-    }
-
-    void Impulsionar(){
         if(Input.touchCount > 0){
             if(Input.GetTouch(0).phase == TouchPhase.Began){
-                rigidbodyJogador.velocity = Vector2.zero;
-                rigidbodyJogador.AddForce(Vector2.up * forca, ForceMode2D.Impulse);
+                deveImpulsionar = true;
             }
         }
         if(Input.GetButtonDown("Fire1")){
-            rigidbodyJogador.velocity = Vector2.zero;
-            rigidbodyJogador.AddForce(Vector2.up * forca, ForceMode2D.Impulse);
+            deveImpulsionar = true;
         };
+    }
+
+    void FixedUpdate(){
+        if(deveImpulsionar){
+            Impulsionar();
+        }
+    }
+
+    void Impulsionar(){
+        rigidbodyJogador.velocity = Vector2.zero;
+        rigidbodyJogador.AddForce(Vector2.up * forca, ForceMode2D.Impulse);
+        deveImpulsionar = false;
     }
 
 

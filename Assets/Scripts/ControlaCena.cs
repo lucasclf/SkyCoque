@@ -6,13 +6,15 @@ using UnityEngine.SceneManagement;
 public class ControlaCena : MonoBehaviour
 {
     [SerializeField]
-    private GameObject interfaceGameOver;
+    private ControlaInterface controlaInterface;
     private ControlaJogador jogador;
     [SerializeField]
     private AudioSource audioSourceDiretor;
     [SerializeField]
     private AudioClip gameOverSound;
     void Awake(){
+        Time.timeScale = 0; 
+        controlaInterface = GameObject.FindAnyObjectByType<ControlaInterface>();
     }
 
     void Start(){
@@ -20,12 +22,12 @@ public class ControlaCena : MonoBehaviour
     }
     public void FinalizaJogo(){
         Time.timeScale = 0; 
-        interfaceGameOver.SetActive(true);
+        controlaInterface.AtivaInterfaceGameOver();
         AlterarSom(gameOverSound);
     }
 
     public void ReiniciarJogo(){
-        interfaceGameOver.SetActive(false);
+        controlaInterface.AlteraEstadoGameOver(false);
         Time.timeScale = 1;
         SceneManager.LoadScene("Fase_01");
     }

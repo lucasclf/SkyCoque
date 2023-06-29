@@ -291,6 +291,7 @@ GameObject:
   - component: {fileID: 105183442}
   - component: {fileID: 105183446}
   - component: {fileID: 105183447}
+  - component: {fileID: 105183448}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -415,6 +416,27 @@ CircleCollider2D:
   m_Offset: {x: 0.02, y: -0.03}
   serializedVersion: 2
   m_Radius: 0.12
+--- !u!95 &105183448
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105183441}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 91334e678d5cea64cb34414b9ac156da, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &111431564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,11 +1920,11 @@ RectTransform:
   m_Father: {fileID: 1144981604}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 595.79, y: 89.2}
-  m_Pivot: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1894295819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1930,7 +1952,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 7
     m_MaxSize: 74
-    m_Alignment: 5
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
