@@ -6,6 +6,7 @@
 ### Added
 - Sistema de pontuação máxima.
 - Inserido sistema de dificuldade.
+- Inserida sistema de particulas.
 ### Changed
 - Refatoração interna.
 - Melhoria na interface de pontuação.
