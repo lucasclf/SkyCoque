@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d04fdbaedd39ad846b52afc041894ca7, type: 3}
   m_Name: Variaveis Compartilhadas
   m_EditorClassIdentifier: 
-  VelocidadeCeuFloat: 0
+  VelocidadeChaoFloat: 5
+  VelocidadeFundoFloat: 3
+  VelocidadeObstaculoFloat: 5
