@@ -9,11 +9,13 @@ public class ControlaJogador : MonoBehaviour
     [SerializeField]
     private float forca = 5;
     private bool deveImpulsionar = false;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Awake()
     {
         rigidbodyJogador = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Start(){
@@ -31,6 +33,8 @@ public class ControlaJogador : MonoBehaviour
         if(Input.GetButtonDown("Fire1")){
             deveImpulsionar = true;
         };
+
+        animator.SetFloat("Velocidade Y", rigidbodyJogador.velocity.y);
     }
 
     void FixedUpdate(){

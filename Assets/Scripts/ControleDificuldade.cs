@@ -18,7 +18,6 @@ public class ControleDificuldade : MonoBehaviour
     void Update()
     {
         tempoDeJogo += Time.deltaTime;
-        Debug.Log(dificuldade);
         dificuldade = tempoDeJogo/tempoDificuldadeMaxima;
         dificuldade = Mathf.Min(1, dificuldade);
     }
