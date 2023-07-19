@@ -17,7 +17,9 @@
 - Inserida animação de subida e queda.
 ### Chaged
 - Refatorada as ancoras da interface.
-
+---
+## [2.0.0] | 2023-07-19
+- Lançada a versão single player.
 
 
 
