@@ -29,7 +29,7 @@ public class ControlaCena : MonoBehaviour
     public void ReiniciarJogo(){
         controlaInterface.AlteraEstadoGameOver(false);
         Time.timeScale = 1;
-        SceneManager.LoadScene("Fase_01");
+        SceneManager.LoadScene("Fase_MP");
     }
 
     void DestruirObstaculos(){

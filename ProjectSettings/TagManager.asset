@@ -9,6 +9,7 @@ TagManager:
   - chao
   - fundo
   - ceu
+  - barreiraObstaculo
   layers:
   - Default
   - TransparentFX

@@ -67,7 +67,7 @@ public class ControlaCenario : MonoBehaviour
     void MoverFundo(){
         int index = 0;
         foreach(GameObject fundo in fundos){
-            float deslocamento = Mathf.Repeat(velocidades.VelocidadeFundoFloat * Time.time, tamanhoRealFundo[index]);
+            float deslocamento = Mathf.Repeat(velocidades.VelocidadeFundoFloat * Time.time, tamanhoRealFundo[index]/2);
             fundo.transform.position = posicaoInicialFundo[index] + Vector3.left * deslocamento;
             index++;
         }
@@ -76,7 +76,7 @@ public class ControlaCenario : MonoBehaviour
     void MoverChao(){
         int index = 0;
         foreach(GameObject chao in chaos){
-            float deslocamento = Mathf.Repeat(velocidades.VelocidadeChaoFloat * Time.time, tamanhoRealChao[index]);
+            float deslocamento = Mathf.Repeat(velocidades.VelocidadeChaoFloat * Time.time, tamanhoRealChao[index]/2);
             chao.transform.position = posicaoInicialChao[index] + Vector3.left * deslocamento;
             index++;
         }

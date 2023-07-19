@@ -15,11 +15,19 @@
 ### Added
 - Inserido sistema de medalhas.
 - Inserida animação de subida e queda.
-### Chaged
+### Changed
 - Refatorada as ancoras da interface.
 ---
 ## [2.0.0] | 2023-07-19
 - Lançada a versão single player.
+---
+## [2.0.1] | 2023-07-19
+### Added
+- Iniciada a versão multy player.
+- Inserida nova tela.
+### Changed
+- Alterada lógica da pontuação para o MultyPlayer.
+- Alterada lógica dos controles para o MultyPlayer
 
 
 

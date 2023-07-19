@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ControlaJogador : MonoBehaviour
 {
     private Rigidbody2D rigidbodyJogador;
-    private ControlaCena diretor;
     [SerializeField]
     private float forca = 5;
+    [SerializeField]
+    private UnityEvent aoColidir; 
+    [SerializeField]
+    private UnityEvent aoPassarPeloObstaculo;
     private bool deveImpulsionar = false;
     private Animator animator;
 
@@ -18,22 +22,9 @@ public class ControlaJogador : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    void Start(){
-        diretor = GameObject.FindObjectOfType<ControlaCena>();
-    }
-
     // Update is called once per frame
     void Update()
     {
-        if(Input.touchCount > 0){
-            if(Input.GetTouch(0).phase == TouchPhase.Began){
-                deveImpulsionar = true;
-            }
-        }
-        if(Input.GetButtonDown("Fire1")){
-            deveImpulsionar = true;
-        };
-
         animator.SetFloat("Velocidade Y", rigidbodyJogador.velocity.y);
     }
 
@@ -43,6 +34,9 @@ public class ControlaJogador : MonoBehaviour
         }
     }
 
+    public void DarImpulso(){
+        deveImpulsionar = true;
+    }
     void Impulsionar(){
         rigidbodyJogador.velocity = Vector2.zero;
         rigidbodyJogador.AddForce(Vector2.up * forca, ForceMode2D.Impulse);
@@ -52,6 +46,10 @@ public class ControlaJogador : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D objetoColidido){
         rigidbodyJogador.simulated = false;
-        diretor.FinalizaJogo();
+        aoColidir.Invoke();
+    }
+
+    void OnTriggerEnter2D(Collider2D gatilhoColidido) {
+        this.aoPassarPeloObstaculo.Invoke();
     }
 }
