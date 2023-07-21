@@ -13,6 +13,7 @@ public class ControlaGeradorObstaculos : MonoBehaviour
     [SerializeField]
     private GameObject Obstaculo;
     private ControleDificuldade controleDificuldade;
+    private bool parado;
     
     void Awake(){
         cronometro = tempoParaGerarFacil;
@@ -21,7 +22,10 @@ public class ControlaGeradorObstaculos : MonoBehaviour
         controleDificuldade = GameObject.FindAnyObjectByType<ControleDificuldade>();
     }
 
-    void Update(){   
+    void Update(){
+        if(parado){
+            return;
+        }   
         cronometro -= Time.deltaTime;
         if(cronometro <0 ){
             GerarObstaculos();
@@ -31,5 +35,9 @@ public class ControlaGeradorObstaculos : MonoBehaviour
     void GerarObstaculos(){
         GameObject.Instantiate(Obstaculo, transform.position, Quaternion.identity);
         cronometro = Mathf.Lerp(tempoParaGerarFacil, tempoParaGerarDificil, controleDificuldade.GetDificuldade());
+    }
+
+    public void Parar(){
+        parado = true;
     }
 }

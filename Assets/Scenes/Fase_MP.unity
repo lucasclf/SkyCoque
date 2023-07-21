@@ -407,6 +407,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 393035420}
+  - component: {fileID: 393035421}
   m_Layer: 0
   m_Name: Jogo02
   m_TagString: Untagged
@@ -433,6 +434,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &393035421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393035419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a52a793045f84948b989f414e5db5d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &414963915
 GameObject:
   m_ObjectHideFlags: 0
@@ -6300,7 +6313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 249715816100817242, guid: d8d4616c60fdab14996d92e33abd5b94, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 249715816100817245, guid: d8d4616c60fdab14996d92e33abd5b94, type: 3}
       propertyPath: aoColidir.m_PersistentCalls.m_Calls.Array.size
@@ -6313,7 +6326,7 @@ PrefabInstance:
     - target: {fileID: 249715816100817245, guid: d8d4616c60fdab14996d92e33abd5b94, type: 3}
       propertyPath: aoColidir.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 511254538}
+      objectReference: {fileID: 393035421}
     - target: {fileID: 249715816100817245, guid: d8d4616c60fdab14996d92e33abd5b94, type: 3}
       propertyPath: aoPassarPeloObstaculo.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -6324,7 +6337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 249715816100817245, guid: d8d4616c60fdab14996d92e33abd5b94, type: 3}
       propertyPath: aoColidir.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FinalizaJogo
+      value: Desativar
       objectReference: {fileID: 0}
     - target: {fileID: 249715816100817245, guid: d8d4616c60fdab14996d92e33abd5b94, type: 3}
       propertyPath: aoPassarPeloObstaculo.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -6340,7 +6353,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 249715816100817245, guid: d8d4616c60fdab14996d92e33abd5b94, type: 3}
       propertyPath: aoColidir.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ControlaCena, Assembly-CSharp
+      value: ControlaJogo, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 249715816100817245, guid: d8d4616c60fdab14996d92e33abd5b94, type: 3}
       propertyPath: aoPassarPeloObstaculo.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -6995,6 +7008,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1577729958}
+  - component: {fileID: 1577729959}
   m_Layer: 0
   m_Name: Jogo01
   m_TagString: Untagged
@@ -7021,6 +7035,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1577729959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577729957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a52a793045f84948b989f414e5db5d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1641557798
 GameObject:
   m_ObjectHideFlags: 0
@@ -12788,7 +12814,7 @@ PrefabInstance:
     - target: {fileID: 249715816100817245, guid: d8d4616c60fdab14996d92e33abd5b94, type: 3}
       propertyPath: aoColidir.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 511254538}
+      objectReference: {fileID: 1577729959}
     - target: {fileID: 249715816100817245, guid: d8d4616c60fdab14996d92e33abd5b94, type: 3}
       propertyPath: aoPassarPeloObstaculo.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -12799,7 +12825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 249715816100817245, guid: d8d4616c60fdab14996d92e33abd5b94, type: 3}
       propertyPath: aoColidir.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FinalizaJogo
+      value: Desativar
       objectReference: {fileID: 0}
     - target: {fileID: 249715816100817245, guid: d8d4616c60fdab14996d92e33abd5b94, type: 3}
       propertyPath: aoPassarPeloObstaculo.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -12815,7 +12841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 249715816100817245, guid: d8d4616c60fdab14996d92e33abd5b94, type: 3}
       propertyPath: aoColidir.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ControlaCena, Assembly-CSharp
+      value: ControlaJogo, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 249715816100817245, guid: d8d4616c60fdab14996d92e33abd5b94, type: 3}
       propertyPath: aoPassarPeloObstaculo.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
