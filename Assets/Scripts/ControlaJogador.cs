@@ -14,12 +14,15 @@ public class ControlaJogador : MonoBehaviour
     private UnityEvent aoPassarPeloObstaculo;
     private bool deveImpulsionar = false;
     private Animator animator;
+    private Vector3 posicaoInicial;
+    private bool morto;
 
     // Start is called before the first frame update
     void Awake()
     {
         rigidbodyJogador = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        posicaoInicial = transform.position;
     }
 
     // Update is called once per frame
@@ -43,13 +46,25 @@ public class ControlaJogador : MonoBehaviour
         deveImpulsionar = false;
     }
 
-
-    void OnCollisionEnter2D(Collision2D objetoColidido){
+    void OnCollisionEnter2D(Collision2D objetoColidido)
+    {
+        morto = true;
         rigidbodyJogador.simulated = false;
         aoColidir.Invoke();
     }
 
     void OnTriggerEnter2D(Collider2D gatilhoColidido) {
         this.aoPassarPeloObstaculo.Invoke();
+    }
+
+    public void Reiniciar()
+    {
+        if (morto = true)
+        {
+            transform.position = posicaoInicial;
+            rigidbodyJogador.simulated = true;
+            morto = false;
+        }
+
     }
 }

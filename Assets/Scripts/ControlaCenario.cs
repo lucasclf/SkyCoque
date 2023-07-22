@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ControlaCenario : MonoBehaviour
 {
     [SerializeField]
     private VariaveisCompartilhadas velocidades;
-    private GameObject[] chaos;
-    private GameObject[] fundos;
+    private List<GameObject> chaos;
+    private List<GameObject> fundos;
     private Vector3[] posicaoInicialChao;
     private float[] tamanhoRealChao;
     private Vector3[] posicaoInicialFundo;
@@ -27,9 +28,27 @@ public class ControlaCenario : MonoBehaviour
     }
 
     void RecuperarObjetos(){
-        chaos = GameObject.FindGameObjectsWithTag("chao");
-        fundos = GameObject.FindGameObjectsWithTag("fundo");
+        GameObject[] tempChaos = GameObject.FindGameObjectsWithTag("chao");
 
+        chaos = new List<GameObject>();
+        foreach (GameObject chao in tempChaos)
+        {
+            if (chao.transform.IsChildOf(transform))
+            {
+                chaos.Add(chao);
+            }
+        }
+
+        fundos = new List<GameObject>();
+        GameObject[] tempFundos = GameObject.FindGameObjectsWithTag("fundo");
+        foreach (GameObject fundo in tempFundos)
+        {
+            if (fundo.transform.IsChildOf(transform))
+            {
+                fundos.Add(fundo);
+            }
+        }
+        
         posicaoInicialChao = RecuperaPosicaoInicial(chaos);
         tamanhoRealChao = RecuperaTamanhoReal(chaos);
         
@@ -38,8 +57,8 @@ public class ControlaCenario : MonoBehaviour
 
     }
 
-    Vector3[] RecuperaPosicaoInicial(GameObject[] objetos){
-        int quantidadeObjetos = objetos.Length;
+    Vector3[] RecuperaPosicaoInicial(List<GameObject> objetos){
+        int quantidadeObjetos = objetos.Count;
         Vector3[] posicoesInicial = new Vector3[quantidadeObjetos];
         int index = 0;
         foreach(GameObject objeto in objetos){
@@ -47,12 +66,11 @@ public class ControlaCenario : MonoBehaviour
             posicoesInicial[index] = posicao;
             index++;
         }
-
         return posicoesInicial;
     }
 
-    float[] RecuperaTamanhoReal(GameObject[] objetos){
-        int quantidadeObjetos = objetos.Length;
+    float[] RecuperaTamanhoReal(List<GameObject> objetos){
+        int quantidadeObjetos = objetos.Count();
         float[] tamanhosReais = new float[quantidadeObjetos];
         int index = 0;
         foreach(GameObject objeto in objetos){

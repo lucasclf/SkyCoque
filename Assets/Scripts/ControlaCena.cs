@@ -17,7 +17,7 @@ public class ControlaCena : MonoBehaviour
         controlaInterface = GameObject.FindAnyObjectByType<ControlaInterface>();
     }
 
-    void Start(){
+    protected virtual void Start(){
         jogador = GameObject.FindAnyObjectByType<ControlaJogador>();
     }
     public void FinalizaJogo(){

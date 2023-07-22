@@ -40,4 +40,8 @@ public class ControlaGeradorObstaculos : MonoBehaviour
     public void Parar(){
         parado = true;
     }
+    
+    public void Recomecar(){
+        parado = false;
+    }
 }

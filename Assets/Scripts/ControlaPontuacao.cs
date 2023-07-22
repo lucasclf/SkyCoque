@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ControlaPontuacao : MonoBehaviour
 {
     private int pontos;
     private AudioSource audioPontuacao;
+    [SerializeField]
+    private UnityEvent aoPontuar;
     private int pontuacaoMaxima;
     private ControlaInterface controlaInterface;
 
@@ -18,6 +21,7 @@ public class ControlaPontuacao : MonoBehaviour
         pontos++;
         controlaInterface.AlteraPlacar();
         audioPontuacao.Play();
+        aoPontuar.Invoke();
     }
 
     public void SalvarPontuacao(){
